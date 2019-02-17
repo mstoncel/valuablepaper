@@ -1,7 +1,5 @@
 from rest_framework.views import APIView
-
-from app.api.models import Stock
-from app.api.serializers import StockSerializer, CreateStockSerializer
+from app.api.serializers import StockSerializer
 from app.provider.models import Provider
 from rest_framework.response import Response
 from rest_framework import status
