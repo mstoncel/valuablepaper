@@ -1,0 +1,26 @@
+[
+  {
+    "model": "provider.provider",
+    "pk": 1,
+    "fields": {
+      "name": "uzmanpara",
+      "data": {
+        "base_url": "http://uzmanpara.milliyet.com.tr/borsa/hisse-senetleri"
+      },
+      "status": "active",
+      "created_at": "2019-02-17T17:36:00.100Z"
+    }
+  },
+  {
+    "model": "provider.provider",
+    "pk": 2,
+    "fields": {
+      "name": "bigpara",
+      "data": {
+        "base_url": "http://bigpara.hurriyet.com.tr/borsa/hisse-fiyatlari/{}-detay/teknik-yorum/"
+      },
+      "status": "active",
+      "created_at": "2019-02-17T17:36:00.100Z"
+    }
+  }
+]

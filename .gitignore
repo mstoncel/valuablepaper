@@ -1,0 +1,124 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+.python-version
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+locale/
+*.mo
+*.po
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+docs/_build/
+
+# Local settings
+config/local_settings.py
+
+# bower
+bower_components
+
+node_modules/
+assets/*/css/main.css
+
+# gzip files
+*.gz
+
+assets/*/img/sprite.png
+
+# geoip databases
+geoip
+
+*.sqlite3
+
+# redis
+dump.rdb
+
+*.mo
+geoip
+
+# macosx
+*.DS_Store
+
+assets/*/CACHE
+
+.idea/
+
+celerybeat-schedule
+celerybeat.pid
+
+# vim
+*.swp
+*.un~
+#docs
+docs/_build
+docs/_static
+docs/_template
+
+.tern-project
+.tern-port
+TAGS
+.venv
+
+# emacs tmp files
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+boto.ini
+files/
+env/
+__pycache__/
+sql
+w1.log
+celerybeat-schedule.db
+dump.rdb
+celerybeat.pid
+*.log
+*.pot
+*.pyc
+*.swp
+.DS_Store
+.idea
+.vagrant
+.sass-cache/
+**/*.orig
