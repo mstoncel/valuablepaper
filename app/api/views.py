@@ -6,12 +6,15 @@ from rest_framework import status
 
 
 class StockView(APIView):
-    def get(self, *args, **kwargs):
-        search = self.request.GET.get('q')
+    def get(self, *args, **kwargs: dict) -> dict:
+        search = self.request.GET.get('name')
         stock_symbol = kwargs.get('stock_symbol')
-        providers = Provider.objects.all()
+        providers = Provider.objects.filter()
+        if search:
+            providers.filter()
         response_data = []
         for provider in providers:
+            # check all provider
             if search:
                 if provider.name != search.lower():
                     continue

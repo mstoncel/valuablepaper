@@ -16,7 +16,8 @@ class Provider(models.Model):
 
     def get_provider_object(self, file_name, class_name):
         path_ = f'app.provider.{file_name}.{self.name}.{class_name}'
-        return import_string(path_)
+        import_ = import_string(path_)
+        return import_
 
     @property
     def get_client(self):
