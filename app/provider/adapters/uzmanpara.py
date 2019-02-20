@@ -1,7 +1,6 @@
 import re
 from bs4 import BeautifulSoup
-
-from app.api.datastructures import ResponseError, ResponsePayload
+from app.api.datastructures import ResponseError
 
 
 class Adapter(object):
@@ -35,9 +34,11 @@ class Adapter(object):
                 '''div.realTime > span.price-arrow-down,
                  div.realTime > span.price-arrow-up''').text
             last_price = soup.select_one(
-                ' div.realTime > table > tbody > tr.last > td:nth-child(2)').text
+                """div.realTime > table > tbody > tr.last > 
+                        td:nth-child(2)""").text
             start_price = \
-                re.findall(r"[-+]?\d*\.\d+|\d+", last_price.replace(',', '.'))[0]
+                re.findall(r"[-+]?\d*\.\d+|\d+", last_price.replace(',', '.'))[
+                    0]
             real_price = real_price.replace(',', '.')
             stock_data = dict(
                 symbol=stock_symbol.upper(),
@@ -49,4 +50,3 @@ class Adapter(object):
 
     def initial_all_stock_data(self):
         return []
-
