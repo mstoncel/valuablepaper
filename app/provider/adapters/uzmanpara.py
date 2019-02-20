@@ -37,3 +37,7 @@ class Adapter(object):
             provider_name=self.provider.name,
         )
         return stock_data
+
+    def initial_all_stock_data(self):
+        return []
+
