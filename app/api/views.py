@@ -7,10 +7,14 @@ from rest_framework import status
 
 class StockView(APIView):
     def get(self, *args, **kwargs):
+        search = self.request.GET.get('q')
         stock_symbol = kwargs.get('stock_symbol')
         providers = Provider.objects.all()
         response_data = []
         for provider in providers:
+            if search:
+                if provider.name != search.lower():
+                    continue
             adapter = provider.get_adapter(provider=provider)
             if not provider.status.lower() == 'active':
                 continue
