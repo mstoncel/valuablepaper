@@ -1,8 +1,6 @@
 from bs4 import BeautifulSoup
-
 from app.api.datastructures import ResponseError
 from app.provider.clients.helpers import find_float, convert_float
-
 from app.api.models import Stock
 
 
@@ -37,8 +35,8 @@ class Adapter:
             if soup.error:
                 return stock_data
             start_price = soup.select_one('''
-                #content > div.contentLeft > div.otyTable1.mBot20 > div.otyBody > 
-                div:nth-child(3) > span:nth-child(1)''').text
+                #content > div.contentLeft > div.otyTable1.mBot20 > 
+                div.otyBody > div:nth-child(3) > span:nth-child(1)''').text
             start_price = convert_float(start_price)
             last_price = soup.select_one(
                 '''#content > div.contentLeft > div.hisseProcessBar.mBot10 > 
