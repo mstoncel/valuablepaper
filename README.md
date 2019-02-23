@@ -1,3 +1,3 @@
 # valuablepaper
 
-- You can find BIST shares in this API.
+- You can find BIST stocks in this API.
