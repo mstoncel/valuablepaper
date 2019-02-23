@@ -6,6 +6,7 @@ from app.provider.models import Provider
 from rest_framework.response import Response
 from rest_framework import status
 import django_filters.rest_framework
+from rest_framework.pagination import PageNumberPagination
 
 
 class StockFilter(django_filters.FilterSet):
@@ -23,6 +24,7 @@ class StockAllView(ListAPIView):
     serializer_class = StockAllSerializer
     queryset = Stock.objects.all()
     filter_class = StockFilter
+    pagination_class = PageNumberPagination
 
 
 class StockView(APIView):
