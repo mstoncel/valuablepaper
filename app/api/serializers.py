@@ -19,7 +19,7 @@ class StockSerializer(serializers.Serializer):
         return {provider_name: res}
 
 
-class CreateStockSerializer(serializers.ModelSerializer):
+class StockAllSerializer(serializers.ModelSerializer):
     class Meta:
         model = Stock
-        exclude = ('id',)
+        fields = ('symbol', 'real_price', 'start_price')
