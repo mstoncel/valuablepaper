@@ -2,5 +2,6 @@ from django.urls import path, re_path
 from app.api import views
 
 urlpatterns = [
-    path('<str:stock_symbol>', views.StockView.as_view(), name='single_stock')
+    path('<str:stock_symbol>', views.StockView.as_view(), name='single_stock'),
+    path('', views.StockAllView.as_view(), name='all_stock')
 ]

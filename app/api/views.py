@@ -1,8 +1,28 @@
 from rest_framework.views import APIView
-from app.api.serializers import StockSerializer
+from rest_framework.generics import ListAPIView
+from app.api.models import Stock
+from app.api.serializers import StockSerializer, StockAllSerializer
 from app.provider.models import Provider
 from rest_framework.response import Response
 from rest_framework import status
+import django_filters.rest_framework
+
+
+class StockFilter(django_filters.FilterSet):
+    min_price = django_filters.NumberFilter(field_name="real_price",
+                                            lookup_expr='gte')
+    provider = django_filters.CharFilter(field_name='provider__name',
+                                         lookup_expr='iexact')
+
+    class Meta:
+        model = Stock
+        fields = ['symbol', 'provider', 'min_price']
+
+
+class StockAllView(ListAPIView):
+    serializer_class = StockAllSerializer
+    queryset = Stock.objects.all()
+    filter_class = StockFilter
 
 
 class StockView(APIView):
@@ -30,4 +50,3 @@ class StockView(APIView):
         serializer = StockSerializer(data=response_data, many=True)
         if serializer.is_valid(raise_exception=True):
             return Response(serializer.data, status=status.HTTP_200_OK)
-
