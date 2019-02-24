@@ -20,6 +20,12 @@ class StockSerializer(serializers.Serializer):
 
 
 class StockAllSerializer(serializers.ModelSerializer):
+    detail = serializers.HyperlinkedIdentityField(
+        view_name='stock:single_stock',
+        lookup_field='symbol',
+        lookup_url_kwarg='stock_symbol'
+    )
+
     class Meta:
         model = Stock
-        fields = ('symbol', 'real_price', 'start_price')
+        fields = ('symbol', 'detail',)

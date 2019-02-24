@@ -31,18 +31,12 @@ class StockView(APIView):
     def get(self, *args, **kwargs: dict) -> dict:
         search = self.request.GET.get('name')
         stock_symbol = kwargs.get('stock_symbol')
-        providers = Provider.objects.filter()
+        providers = Provider.objects.filter(status='active')
         if search:
-            providers.filter()
+            providers = providers.filter(name__icontains=search)
         response_data = []
         for provider in providers:
-            # check all provider
-            if search:
-                if provider.name != search.lower():
-                    continue
             adapter = provider.get_adapter(provider=provider)
-            if not provider.status.lower() == 'active':
-                continue
             response = adapter.initial_stock_data(stock_symbol)
             if response:
                 response_data.append(response)
