@@ -1,5 +1,4 @@
 from django.db import models
-
 from app.provider.models import Provider
 
 
