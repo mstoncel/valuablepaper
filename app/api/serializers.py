@@ -28,4 +28,4 @@ class StockAllSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Stock
-        fields = ('symbol', 'detail',)
+        fields = ('symbol', 'detail', 'title')

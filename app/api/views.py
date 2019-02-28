@@ -14,10 +14,12 @@ class StockFilter(django_filters.FilterSet):
                                             lookup_expr='gte')
     provider = django_filters.CharFilter(field_name='provider__name',
                                          lookup_expr='iexact')
+    title = django_filters.CharFilter(field_name='title',
+                                      lookup_expr='icontains')
 
     class Meta:
         model = Stock
-        fields = ['symbol', 'provider', 'min_price']
+        fields = ['symbol', 'provider', 'min_price', 'title']
 
 
 class StockAllView(ListAPIView):
