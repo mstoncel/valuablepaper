@@ -9,6 +9,7 @@ class Stock(models.Model):
     title = models.CharField(max_length=150, null=True)
     provider = models.ForeignKey(Provider, on_delete=models.PROTECT,
                                  related_name='provider')
+    created_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         db_table = 'stock'

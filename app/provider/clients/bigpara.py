@@ -1,4 +1,6 @@
 import os
+import random
+import time
 import requests
 import json
 from app.provider.clients.helpers import client_response_validation
@@ -13,7 +15,8 @@ class Client:
             post_data = {}
         url = os.path.join(self.base_url, url)
         return requests.request(method=method, url=url,
-                                data=json.dumps(post_data))
+                                data=json.dumps(post_data), verify=False,
+                                timeout=60)
 
     @client_response_validation
     def extract_stock(self, stock_symbol):
