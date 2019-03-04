@@ -1,3 +1,4 @@
+from datetime import date
 from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView
 from app.api.models import Stock
@@ -24,7 +25,7 @@ class StockFilter(django_filters.FilterSet):
 
 class StockAllView(ListAPIView):
     serializer_class = StockAllSerializer
-    queryset = Stock.objects.all()
+    queryset = Stock.objects.filter(created_at__date=date.today())
     filter_class = StockFilter
     pagination_class = PageNumberPagination
 
