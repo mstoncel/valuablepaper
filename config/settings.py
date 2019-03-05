@@ -24,6 +24,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '3o5s@h^q-p*7fsd5i=5-)7s+30j7ze%w&d$3oq#b-w3-($%m1e'
 
+BROKER_URL = 'redis://127.0.0.1:6379/1'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/1'
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
