@@ -73,4 +73,3 @@ vine==1.2.0
 w3lib==1.20.0
 wcwidth==0.1.7
 zope.interface==4.6.0
--e git+https://github.com/mstoncel/celery@master#egg=celery
