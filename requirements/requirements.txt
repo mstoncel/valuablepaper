@@ -67,7 +67,7 @@ soupsieve==1.7.3
 standardjson==0.3.1
 tqdm==4.31.1
 traitlets==4.3.2
-Twisted==18.9.0
+Twisted==19.7.0
 urllib3==1.24.1
 vine==1.2.0
 w3lib==1.20.0
