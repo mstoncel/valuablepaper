@@ -1,3 +1,4 @@
+python-dotenv==0.12.0
 amqp==2.4.1
 appnope==0.1.0
 arrow==0.13.0
@@ -15,7 +16,7 @@ constantly==15.1.0
 cryptography==2.5
 cssselect==1.0.3
 decorator==4.3.2
-Django==2.1.5
+Django==2.2.10
 django-extensions==2.1.5
 django-filter==2.1.0
 django-prettyjson==0.4.1
@@ -67,7 +68,7 @@ soupsieve==1.7.3
 standardjson==0.3.1
 tqdm==4.31.1
 traitlets==4.3.2
-Twisted==18.9.0
+Twisted==19.7.0
 urllib3==1.24.1
 vine==1.2.0
 w3lib==1.20.0

@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from app.api.datastructures import ResponseError
 
 
-class Adapter(object):
+class Adapter:
 
     def __init__(self, *args, **kwargs):
         self.provider = kwargs.get('provider')
