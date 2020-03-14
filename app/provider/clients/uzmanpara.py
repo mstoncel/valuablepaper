@@ -22,8 +22,7 @@ class Client:
 
     @client_response_validation
     def extract_stock(self, stock_symbol):
-        url = os.path.join('borsa/hisse-senetleri', stock_symbol.upper())
-        return self.make_request(url=url)
+        return self.make_request(url=stock_symbol.upper())
 
     @client_response_validation
     def extract_all_stock(self):

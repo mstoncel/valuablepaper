@@ -5,7 +5,7 @@
     "fields": {
       "name": "uzmanpara",
       "data": {
-        "base_url": "http://uzmanpara.milliyet.com.tr/borsa/hisse-senetleri"
+        "base_url": "https://uzmanpara.milliyet.com.tr/borsa/hisse-fiyatlari/"
       },
       "status": "active",
       "created_at": "2019-02-17T17:36:00.100Z"
@@ -17,7 +17,7 @@
     "fields": {
       "name": "bigpara",
       "data": {
-        "base_url": "http://bigpara.hurriyet.com.tr/borsa/hisse-fiyatlari/{}-detay/teknik-yorum/"
+        "base_url": "http://bigpara.hurriyet.com.tr/borsa/hisse-fiyatlari/"
       },
       "status": "active",
       "created_at": "2019-02-17T17:36:00.100Z"

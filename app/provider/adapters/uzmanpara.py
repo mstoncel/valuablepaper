@@ -30,12 +30,14 @@ class Adapter:
             soup = self.soup_generator(response.results, stock_symbol)
             if soup.error:
                 return stock_data
-            real_price = soup.select_one(
-                '''div.realTime > span.price-arrow-down,
-                 div.realTime > span.price-arrow-up''').text
+            real_price = soup.select_one(""" 
+            body > div:nth-child(9) > div.detMain.borsaMain.hisseMain > 
+            div.detR > div.realTime > span.price-arrow-up
+            """).text
             last_price = soup.select_one(
-                """div.realTime > table > tbody > tr.last > 
-                        td:nth-child(2)""").text
+                """body > div:nth-child(9) > div.detMain.borsaMain.hisseMain > 
+                div.detR > div.realTime > table > tbody >
+                tr.last > td:nth-child(2)""").text
             start_price = \
                 re.findall(r"[-+]?\d*\.\d+|\d+", last_price.replace(',', '.'))[
                     0]

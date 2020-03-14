@@ -1,5 +1,8 @@
 # valuablepaper
 
+- Docker
+`` docker-compose up --build ``
+
 - You can find BIST stocks in this API.
 
 
