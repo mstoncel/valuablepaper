@@ -1,6 +1,4 @@
 import os
-import random
-import time
 import requests
 import json
 from app.provider.clients.helpers import client_response_validation
